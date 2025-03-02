@@ -19,10 +19,10 @@ namespace Validspace {                                                          
 /// @tparam Data_t Data type of the keyed data.
 /// @note Default key = `VKey_t::WHITELIST`
 template <class Data_t> class VKeyedData_t {
-    static_assert((type_flags<Data_t> & EQUALITY_OP) == 0, 
-        "VKeyedData_t ERROR: Subtype must have a == operator!");
+    // static_assert((type_flags<Data_t> & EQUALITY_OP) == 0, 
+    //     "VKeyedData_t ERROR: Subtype must have a == operator!");
     public:
-    VKeyedData_t (const VKeyedData_t<Data_t>   &kd) : key(-kd), data(     +kd) {}
+    VKeyedData_t (const VKeyedData_t<Data_t>   &kd) : key(-kd), data(    ++kd) {}
     VKeyedData_t (const VKey_t &k, const Data_t &d) : key(  k), data(       d) {}
     VKeyedData_t (const Data_t &d) :    key(VKey_t::WHITELIST), data(       d) {}
     VKeyedData_t () :                   key(VKey_t::WHITELIST), data(Data_t()) {}
@@ -89,10 +89,13 @@ template <class Data_t> class VKeyedData_t {
     /// @return Key value as `VKey_t` if found or `NULL_KEY` if not found
     VKey_t operator()(const Data_t &q) const { return query(q); }
 
+    /// @brief Explicit cast to `VReturn_t`
+    explicit operator VReturn_t() { return key; }
+
     /// @brief Returns key if queried data matches keyed data
     /// @param q Queried data as `Data_t`
     /// @return Key value as `VKey_t` if found or `NULL_KEY` if not found
-    VKey_t query(const Data_t &q) const { return (q == data) ? key : VKey_t::NULL_KEY; }
+    VKey_t query(const Data_t &q) const { return ((q == data) ? key : VKey_t::NULL_KEY); }
 
     private:
     VKey_t  key; // read only

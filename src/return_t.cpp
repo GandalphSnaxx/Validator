@@ -22,14 +22,14 @@ using namespace Validspace;
 
 /// @section Constructors
 
-VReturn_t::VReturn_t(const VKey_t &key) {
-    if      (key == VKey_t::WHITELIST) { score = PASS   ; }
-    else if (key == VKey_t::BLACKLIST) { score = FAIL   ; }
-    else if (key == VKey_t::PERFECT  ) { score = PERFECT; }
-    else if (key == VKey_t::MAXIMUM  ) { score = PASS   ; }
-    else if (key == VKey_t::MINIMUM  ) { score = PASS   ; }
-    else { score = -key; }
-}
+// VReturn_t::VReturn_t(const VKey_t &key) {
+//     if      (key == VKey_t::WHITELIST) { score = PASS   ; }
+//     else if (key == VKey_t::BLACKLIST) { score = FAIL   ; }
+//     else if (key == VKey_t::PERFECT  ) { score = PERFECT; }
+//     else if (key == VKey_t::MAXIMUM  ) { score = PASS   ; }
+//     else if (key == VKey_t::MINIMUM  ) { score = PASS   ; }
+//     else { score = -key; }
+// }
 
 /// @section Unary Operator Overrides
 
@@ -111,29 +111,29 @@ bool VReturn_t::operator>=(const VReturn_t &rhs) const {
     if (!(*this) || !rhs)        { return     !rhs; } // Either == FAIL, return (RHS == FAIL)
     return score >= rhs.score;                      }
 
-/// @brief If both key and return are not special values, add them.
-/// @param rhs A `VKey_t` to add to a `VReturn_t`
-/// @return this
-VReturn_t& VReturn_t::operator+=(const VKey_t &rhs) {
-    // If key and return are not special values, add them
-    if (rhs != VKey_t::BLACKLIST &&
-        rhs != VKey_t::WHITELIST &&
-        rhs != VKey_t::  MAXIMUM &&
-        rhs != VKey_t::  MINIMUM &&
-        this->isScore())
-    { score += -rhs; } return *this; }
+// /// @brief If both key and return are not special values, add them.
+// /// @param rhs A `VKey_t` to add to a `VReturn_t`
+// /// @return this
+// VReturn_t& VReturn_t::operator+=(const VKey_t &rhs) {
+//     // If key and return are not special values, add them
+//     if (rhs != VKey_t::BLACKLIST &&
+//         rhs != VKey_t::WHITELIST &&
+//         rhs != VKey_t::  MAXIMUM &&
+//         rhs != VKey_t::  MINIMUM &&
+//         this->isScore())
+//     { score += -rhs; } return *this; }
 
-/// @brief If both key and return are not special values, subtract them.
-/// @param rhs A `VKey_t` to add to a `VReturn_t`
-/// @return this
-VReturn_t& VReturn_t::operator-=(const VKey_t &rhs) {
-    // If key and return are not special values, sub them
-    if (rhs != VKey_t::BLACKLIST &&
-        rhs != VKey_t::WHITELIST &&
-        rhs != VKey_t::  MAXIMUM &&
-        rhs != VKey_t::  MINIMUM &&
-        this->isScore())
-    { score -= -rhs; } return *this; }
+// /// @brief If both key and return are not special values, subtract them.
+// /// @param rhs A `VKey_t` to add to a `VReturn_t`
+// /// @return this
+// VReturn_t& VReturn_t::operator-=(const VKey_t &rhs) {
+//     // If key and return are not special values, sub them
+//     if (rhs != VKey_t::BLACKLIST &&
+//         rhs != VKey_t::WHITELIST &&
+//         rhs != VKey_t::  MAXIMUM &&
+//         rhs != VKey_t::  MINIMUM &&
+//         this->isScore())
+//     { score -= -rhs; } return *this; }
 
 /// @brief Adds `VReturn_t` info to an Out Stream
 std::ostream& Validspace::operator<< (std::ostream &os, const VReturn_t &ret) {

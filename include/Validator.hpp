@@ -51,7 +51,6 @@
  */
 
 #include "../src/headers/Validator_core.hpp"
-#include "../src/headers/config_t.hpp"
 #include "../src/headers/keyed_data_t.hpp"
 #include "../src/headers/keyed_list_t.hpp"
 #include "../src/headers/key_t.hpp"

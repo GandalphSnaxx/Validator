@@ -9,8 +9,8 @@
  * ~  | bool     | -       | Returns true if range is exclusive (min >  max)
  * () | bool     | Data_t  | Returns true if queried data is within the range
  */
+#include <flagfield.hpp>
 #include "Validator_core.hpp"
-#include "config_t.hpp"
 #include "keyed_data_t.hpp"
 #include "key_t.hpp"
 
@@ -32,9 +32,9 @@ template <class Data_t> class VRange_t {
     bool operator()(const Data_t&) const;
 
     private:
-    Data_t   min;
-    Data_t   max;
-    Config_t cfg;
+    Data_t min;
+    Data_t max;
+    FlagField<8> cfg;
 
     bool _init(const Data_t&, const Data_t&);
     bool _init(const  VKeyedData_t<Data_t>&);

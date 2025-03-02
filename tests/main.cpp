@@ -22,7 +22,7 @@ enum class testEnum {
 struct testStruct {
     const char* name;
     uint32_t id;
-    // bool operator==(const testStruct &other) const { return name == other.name && id == other.id; }
+    bool operator==(const testStruct &other) const { return name == other.name && id == other.id; }
 };
 
 void compareKeys(const VKey_t &a, const VKey_t &b) {
@@ -90,6 +90,12 @@ template <class Data_t> void keyedDataMath(const VKeyedData_t<Data_t> &a, const 
     std::cout << std::endl;
 }
 
+template <class Data_t> void keyedListTest(const VKeyedList_t<Data_t> &list) {
+    // std::cout << "Keyed list info: " <<= list;
+    // std::cout << std::endl;
+
+}
+
 void main() {
 
     std::cout << "Starting Validator Testing..." << std::endl;
@@ -132,6 +138,38 @@ void main() {
     keyedDataMath(eData1, eData3);
     keyedDataMath(sData1, sData2);
     keyedDataMath(sData3, sData4);
+
+    // VKeyedList_t testing...
+
+    VKeyedList_t<int> intList(1);
+    VKeyedList_t<float> floatList({{10, 1.0f}, {5, 2.0f}, {2, 3.0f}, {1, 4.0f}, {0, 5.0f}});
+    VKeyedList_t<testEnum> enumList;
+    VKeyedList_t<testStruct> structList;
+
+    // keyedListTest(intList);
+    // keyedListTest(floatList);
+    // keyedListTest(enumList);
+    // keyedListTest(structList);
+
+    std::cout << "\nVKeyedList_t tests: " << std::endl;
+    std::cout << "\tintList.query(0): " << intList.query(0) << std::endl;
+    std::cout << "\tintList.query(1): " << intList.query(1) << std::endl;
+    std::cout << "\tintList.query(2): " << intList.query(2) << std::endl;
+    std::cout << "\n";
+    std::cout << "\tfloatList.query(0):    " << floatList.query(0) << std::endl;
+    std::cout << "\tfloatList.query(1.0f): " << floatList.query(1.0f) << std::endl;
+    std::cout << "\tfloatList.query(1.5f): " << floatList.query(1.5f) << std::endl;
+    std::cout << "\tfloatList.query(2.0f): " << floatList.query(2.0f) << std::endl;
+    std::cout << "\tfloatList.query(3.0f): " << floatList.query(3.0f) << std::endl;
+    std::cout << "\tfloatList.query(4.0f): " << floatList.query(4.0f) << std::endl;
+    std::cout << "\tfloatList.query(5.0f): " << floatList.query(5.0f) << std::endl;
+    std::cout << "\n";
+    std::cout << "\tenumList.add(BLACKLIST, {TIER1... TIER4}): " 
+        << enumList.add(VKey_t::BLACKLIST, {
+        testEnum::TIER1, testEnum::TIER2, testEnum::TIER3, testEnum::TIER4
+        }) << std::endl;
+    std::cout << "\tenumList.query(TIER4): " << enumList.query(testEnum::TIER4) << std::endl;
+    std::cout << "\tenumList.query(TIER5): " << enumList.query(testEnum::TIER5) << std::endl;
 
 // // Lets assume something has 4 int traits and we want to find the best candidate out of a list of candidates
 //     // 1. Create a validator for each trait

@@ -15,13 +15,13 @@
 
 /// @section Debug Macros
 #ifdef  NDEBUG
-#define DEBUG_MSG(msg)
-#define DEBUG_NO_ENDL(msg)
-#define DEBUG_ENDL
+#define V_DEBUG_MSG(msg)
+#define V_DEBUG_NO_ENDL(msg)
+#define V_DEBUG_ENDL
 #else
-#define DEBUG_MSG(msg)      std::cout << msg << std::endl
-#define DEBUG_NO_ENDL(msg)  std::cout << msg
-#define DEBUG_ENDL          std::endl
+#define V_DEBUG_MSG(msg)      std::cout << msg << std::endl
+#define V_DEBUG_NO_ENDL(msg)  std::cout << msg
+#define V_DEBUG_ENDL          std::cout << std::endl
 #endif
 
 /// @section Type Trait Functions

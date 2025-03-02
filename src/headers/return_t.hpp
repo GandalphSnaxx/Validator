@@ -5,7 +5,7 @@
  * @brief VReturn_t Class declaration. 
  */
 #include "Validator_core.hpp"
-#include "key_t.hpp"
+// #include "key_t.hpp"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// @brief Internal Validator namespace.                                                                                  ////
@@ -22,7 +22,7 @@ class VReturn_t {
         FAIL    = V_UINT_MAX   }; // Fail label
 
     VReturn_t(const uint_t &val) : score(val) {} // Constructor from uint
-    VReturn_t(const VKey_t &key) ;               // Constructor from VKey_t
+    // VReturn_t(const VKey_t &key) ;               // Constructor from VKey_t
     VReturn_t()                  : score(  0) {} // Default constructor
 
     /// @subsection Conversion Overloads
@@ -49,8 +49,8 @@ class VReturn_t {
     const  VReturn_t  operator- (const VReturn_t&) const ; // Subtracts points if score != FAIL or PERFECT
            VReturn_t& operator+=(const VReturn_t&)       ; // x = x + y using above op
            VReturn_t& operator-=(const VReturn_t&)       ; // x = x - y using above op
-           VReturn_t& operator+=(const    VKey_t&)       ; // Add key to return
-           VReturn_t& operator-=(const    VKey_t&)       ; // Sub key from return
+        //    VReturn_t& operator+=(const    VKey_t&)       ; // Add key to return
+        //    VReturn_t& operator-=(const    VKey_t&)       ; // Sub key from return
            bool       operator==(const VReturn_t&) const ; // Equality check
            bool       operator!=(const VReturn_t&) const ; // Inequality check
            bool       operator< (const VReturn_t&) const ; // Comparison check

@@ -5,6 +5,7 @@
  * @brief VKey_t Class declaration. 
  */
 #include "Validator_core.hpp"
+#include "return_t.hpp"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// @brief Internal Validator namespace.                                                                                  ////
@@ -45,7 +46,7 @@ class VKey_t {
     bool operator<=(const VKey_t &rhs) const { return !(rhs > *this); }
     /// @brief Key comparison. `NULL_KEY` == -1
     bool operator>=(const VKey_t &rhs) const { return !(rhs < *this); }
-    /// @brief Key == NULL_KEY check
+    /// @brief Key == `NULL_KEY` check
     bool operator! () const { return score == NULL_KEY; }
 
     /// @section Score Retrieval Operator Overloads
@@ -56,6 +57,16 @@ class VKey_t {
     const uint_t operator- () const { return score; }
     /// @brief Gets score as `uint_t`
     const uint_t getScore  () const { return score; }
+    /// @brief Cast to `VReturn_t`
+    operator VReturn_t() const { 
+        switch (score) {
+        case WHITELIST: return VReturn_t::PASS;
+        case BLACKLIST: return VReturn_t::FAIL;
+        case MINIMUM:   return VReturn_t::PASS;
+        case MAXIMUM:   return VReturn_t::PASS;
+        case PERFECT:   return VReturn_t::PERFECT;
+        case NULL_KEY:  return VReturn_t::FAIL;
+        default:        return score; }}
     
     private:
     uint_t score;
