@@ -1,0 +1,3 @@
+C:/Users/RayRi/Documents/Ray's C++ Libraries/Validator/build/CMakeFiles/ValidatorTests.dir
+C:/Users/RayRi/Documents/Ray's C++ Libraries/Validator/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/RayRi/Documents/Ray's C++ Libraries/Validator/build/CMakeFiles/ZERO_CHECK.dir
