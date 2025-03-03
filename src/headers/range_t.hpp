@@ -21,10 +21,10 @@ namespace Validspace {                                                          
 
 template <class Data_t> class VRange_t {
     public:
-    VRange_t(const Data_t&, const Data_t &);
-    VRange_t(const VKeyedData_t  <Data_t>&);
-    VRange_t(const VRange_t      <Data_t>&);
-    VRange_t();
+    VRange_t (const Data_t&, const Data_t &);
+    VRange_t (const VKeyedData_t  <Data_t>&);
+    VRange_t (const VRange_t      <Data_t>&);
+    VRange_t ();
     ~VRange_t();
 
     bool operator! () const { return min == max; }

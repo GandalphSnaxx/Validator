@@ -156,7 +156,15 @@ void main() {
     std::cout << "\tintList.query(1): " << intList.query(1) << std::endl;
     std::cout << "\tintList.query(2): " << intList.query(2) << std::endl;
     std::cout << "\n";
-    std::cout << "\tfloatList.query(0):    " << floatList.query(0) << std::endl;
+    std::cout << "\tintList += std::vector<int>{5, 6, 7};\n"; intList += std::vector<int>{5, 6, 7};
+    std::cout << "\tintList += VKeyedData_t<int>{5, 9};\n";   intList += VKeyedData_t<int>{5, 9};
+    std::cout << "\tintList -= {11, 12, 13, 14, 15};\n";      intList -= {11, 12, 13, 14, 15};
+    std::cout << "\n";
+    std::cout << "\tintList(5):  " << intList(5)  << std::endl;
+    std::cout << "\tintList(9):  " << intList(9)  << std::endl;
+    std::cout << "\tintList(15): " << intList(15) << std::endl;
+    std::cout << "\n";
+    std::cout << "\tfloatList.query(0.0f): " << floatList.query(0.0f) << std::endl;
     std::cout << "\tfloatList.query(1.0f): " << floatList.query(1.0f) << std::endl;
     std::cout << "\tfloatList.query(1.5f): " << floatList.query(1.5f) << std::endl;
     std::cout << "\tfloatList.query(2.0f): " << floatList.query(2.0f) << std::endl;
@@ -164,10 +172,11 @@ void main() {
     std::cout << "\tfloatList.query(4.0f): " << floatList.query(4.0f) << std::endl;
     std::cout << "\tfloatList.query(5.0f): " << floatList.query(5.0f) << std::endl;
     std::cout << "\n";
-    std::cout << "\tenumList.add(BLACKLIST, {TIER1... TIER4}): " 
-        << enumList.add(VKey_t::BLACKLIST, {
-        testEnum::TIER1, testEnum::TIER2, testEnum::TIER3, testEnum::TIER4
-        }) << std::endl;
+    std::cout << "\tenumList -= testEnum::TIER1\n"; enumList -= testEnum::TIER1;
+    std::cout << "\tenumList -= testEnum::TIER2\n"; enumList -= testEnum::TIER2;
+    std::cout << "\tenumList -= testEnum::TIER3\n"; enumList -= testEnum::TIER3;
+    std::cout << "\tenumList -= testEnum::TIER4\n"; enumList -= testEnum::TIER4;
+    std::cout << "\n";
     std::cout << "\tenumList.query(TIER4): " << enumList.query(testEnum::TIER4) << std::endl;
     std::cout << "\tenumList.query(TIER5): " << enumList.query(testEnum::TIER5) << std::endl;
 

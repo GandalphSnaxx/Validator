@@ -185,6 +185,27 @@ template<class Data_t> class VKeyedList_t {
 
     /// @section Operator Overrides
 
+    /// @brief Operator overload to query data.
+    VReturn_t operator()(const Data_t &qData) const { return query(qData); }
+    /// @brief Operator overload to get a pointer to keyed data.
+    VKeyedData_t<Data_t>* operator[](const size_t &index) const { if (index >= size()) { return nullptr; } return &list_[index]; }
+
+    /// @brief Adds data to the list. 
+    VKeyedList_t& operator+=(const std::vector<VKeyedData_t<Data_t>> &rhs) { add(rhs); return *this; }
+    /// @brief Adds data to the list. 
+    VKeyedList_t& operator+=(const VKeyedList_t<Data_t> &rhs) { add(rhs); return *this; }
+    /// @brief Adds data to the list. 
+    VKeyedList_t& operator+=(const VKeyedData_t<Data_t> &rhs) { add(rhs); return *this; }
+    /// @brief Adds data to the list with WHITELIST key.
+    VKeyedList_t& operator+=(const std::vector<Data_t> &rhs) { add(VKey_t::WHITELIST, rhs); return *this; }
+    /// @brief Adds data to the list with WHITELIST key.
+    VKeyedList_t& operator+=(const Data_t &rhs) { add(VKey_t::WHITELIST, rhs); return *this; }
+    
+    /// @brief Adds data to the list with BLACKLIST key.
+    VKeyedList_t& operator-=(const std::vector<Data_t> &rhs) { add(VKey_t::BLACKLIST, rhs); return *this; }
+    /// @brief Adds data to the list with BLACKLIST key.
+    VKeyedList_t& operator-=(const Data_t &rhs) { add(VKey_t::BLACKLIST, rhs); return *this; }
+
     // MyClass& MyClass::operator=(const MyClass &rhs) {
     //     // Only do assignment if RHS is a different object from this.
     //     if (this != &rhs) {
