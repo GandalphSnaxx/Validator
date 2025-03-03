@@ -4,16 +4,7 @@
     <ClCompile Include="C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\tests\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\src\config_t.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\src\helper_funcs.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\src\return_t.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\src\valid_list_t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

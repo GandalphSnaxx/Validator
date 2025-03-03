@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -107,10 +107,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;DEBUG;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -133,7 +133,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -155,10 +155,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;DEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -181,7 +181,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -203,10 +203,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;DEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -229,7 +229,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -250,10 +250,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;DEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\include;C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\Libraries\FlagField\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -333,10 +333,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\tests\main.cpp" />
-    <ClCompile Include="C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\src\config_t.cpp" />
-    <ClCompile Include="C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\src\helper_funcs.cpp" />
     <ClCompile Include="C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\src\return_t.cpp" />
-    <ClCompile Include="C:\Users\RayRi\Documents\Ray's C++ Libraries\Validator\src\valid_list_t.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
