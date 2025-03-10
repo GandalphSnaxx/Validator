@@ -19,7 +19,7 @@ class VKey_t {
     /// @brief Special value labels
     enum : uint_t {
         WHITELIST   = 0,              // Data is marked as whitelisted
-    //  [1, 2, 3...]                  // Data is marked with a score value
+    //  [1, 2, 3...]                  // Data is a score value
         MINIMUM     = V_UINT_MAX - 4, // Data is marked as a minimum
         MAXIMUM     = V_UINT_MAX - 3, // Data is marked as a maximum
         PERFECT     = V_UINT_MAX - 2, // Data is marked as perfect
@@ -31,6 +31,13 @@ class VKey_t {
     VKey_t(const VKey_t &key) : score(    -key) {} // Constructor from VKey_t
     VKey_t(const uint_t &key) : score(     key) {} // Constructor from uint
     VKey_t()                  : score(NULL_KEY) {} // Default constructor
+
+    /// @section Assignment Operator Overloads
+
+    /// @brief Assigns a value from a `VKey_t`.
+    VKey_t& operator= (const VKey_t &rhs) { score = -rhs; return *this; }
+    /// @brief Assigns a value from a `uint_t`.
+    VKey_t& operator= (const uint_t &rhs) { score =  rhs; return *this; }
 
     /// @section Comparison Operator Overloads
 
@@ -67,6 +74,10 @@ class VKey_t {
         case PERFECT:   return VReturn_t::PERFECT;
         case NULL_KEY:  return VReturn_t::FAIL;
         default:        return score; }}
+
+    /// @section Out Stream Operator Friends
+    friend std::ostream& operator<< (std::ostream &os, const VKey_t &key);
+    friend std::ostream& operator<<=(std::ostream &os, const VKey_t &key);
     
     private:
     uint_t score;

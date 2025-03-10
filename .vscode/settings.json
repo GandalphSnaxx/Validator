@@ -50,7 +50,8 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "string": "cpp"
     },
     "C_Cpp.default.includePath": [
         "${workspaceFolder}/Libraries/**",

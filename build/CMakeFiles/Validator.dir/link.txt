@@ -1,0 +1,2 @@
+C:\msys64\ucrt64\bin\ar.exe qc libValidator.a CMakeFiles/Validator.dir/src/return_t.cpp.obj
+C:\msys64\ucrt64\bin\ranlib.exe libValidator.a
