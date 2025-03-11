@@ -4,7 +4,7 @@
  * @note Main file for testing.
  */
 
-// #define DEBUG
+#define VALIDATOR_DEBUG
 #include "../include/Validator.hpp"
 #include <iostream>
 
@@ -24,6 +24,26 @@ struct testStruct {
     uint32_t id;
     bool operator==(const testStruct &other) const { return name == other.name && id == other.id; }
 };
+
+struct testLimits {
+    uint32_t    trait1;
+    uint32_t    trait2;
+    uint32_t    trait3;
+    testStruct  trait4;
+};
+
+VReturn_t validateTestLimits(const testLimits &qTest) {
+    VReturn_t score = 0;
+    Validator<uint32_t> sub1, sub2, sub3;
+    Validator<testStruct> sub4;
+    
+    score += sub1(qTest.trait1);
+    score += sub2(qTest.trait2);
+    score += sub3(qTest.trait3);
+    score += sub4(qTest.trait4);
+
+    return score;
+}
 
 void compareKeys(const VKey_t &a, const VKey_t &b) {
     std::cout << std::endl;
@@ -179,6 +199,40 @@ void main() {
     std::cout << "\n";
     std::cout << "\tenumList.query(TIER4): " << enumList.query(testEnum::TIER4) << std::endl;
     std::cout << "\tenumList.query(TIER5): " << enumList.query(testEnum::TIER5) << std::endl;
+
+    // Validator tests:
+
+    testLimits item1 = {10, 10, 10, {"Item1", 1}};
+    testLimits item2 = { 5, 15,  5, {"Item2", 2}};
+    testLimits item3 = {10, 15, 15, {"Item3", 3}};
+    testLimits item4 = {20, 20, 25, {"Item4", 4}};
+
+    Validator<void> any;
+    Validator<uint32_t> t1Validator{{
+        {VKey_t::WHITELIST,  5},
+        {VKey_t::WHITELIST, 10},
+        {VKey_t::WHITELIST, 15},
+        {VKey_t::WHITELIST, 20},
+        {VKey_t::WHITELIST, 25}}};
+    Validator<uint32_t> t2Validator = any;
+    Validator<uint32_t> t3Validator{{
+        {VKey_t::BLACKLIST,  5},
+        {VKey_t::BLACKLIST, 15}}};
+    Validator<const char*> t4_1Validator = any;
+    Validator<uint32_t> t4_2Validator{{
+        {1, 1},
+        {2, 2},
+        {3, 3},
+        {4, 4},
+        {5, 5}}};
+    Validator<testLimits> limitValidator{   // struct testLimits {
+        t1Validator,                        //  uint32_t     trait1,
+        t2Validator,                        //  uint32_t     trait2,
+        t3Validator,                        //  uint32_t     trait3,
+        {t4_1Validator, t4_2Validator}      //  testStruct   {const char* name, int id}};
+    };
+
+    // auto bestItem = limitValidator.findBest({item1, item2, item3, item4});
 
 // // Lets assume something has 4 int traits and we want to find the best candidate out of a list of candidates
 //     // 1. Create a validator for each trait

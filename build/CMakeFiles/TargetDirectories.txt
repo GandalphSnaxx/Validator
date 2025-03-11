@@ -1,4 +1,0 @@
-C:/Users/RayRi/Documents/Rays_Libraries/Validator/build/CMakeFiles/Validator.dir
-C:/Users/RayRi/Documents/Rays_Libraries/Validator/build/CMakeFiles/ValidatorTests.dir
-C:/Users/RayRi/Documents/Rays_Libraries/Validator/build/CMakeFiles/edit_cache.dir
-C:/Users/RayRi/Documents/Rays_Libraries/Validator/build/CMakeFiles/rebuild_cache.dir

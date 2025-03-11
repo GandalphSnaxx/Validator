@@ -60,13 +60,15 @@
 /// @section Type Definitions for External Use
 
 //    External type | Internal type
+
 using VReturn_t     = Validspace::VReturn_t;
 using VKey_t        = Validspace::VKey_t;
 
 // With subtype T |using| External type | Internal type
+
 template <class T> using   VKeyedList_t = Validspace::VKeyedList_t<T>;
 template <class T> using   VKeyedData_t = Validspace::VKeyedData_t<T>;
-template <class T> using      Validator = Validspace:: Validator_t<T>;
+// template <class T> using      Validator = Validspace:: Validator_t<T>;
 // template <class T> using       VRange_t = Validspace::    VRange_t<T>;
 // template <class T> using        VList_t = Validspace::     VList_t<T>;
 // template <class T> using   VRangeList_t = Validspace::VRangeList_t<T>;

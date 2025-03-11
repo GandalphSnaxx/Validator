@@ -17,7 +17,7 @@ set(SOURCES src/return_t.cpp)
 add_library(Validator STATIC ${SOURCES})
 
 # Add the executable for the tests
-add_executable(ValidatorTests tests/main.cpp)
+add_executable(ValidatorTests tests/tests.cpp)
 
 # Link the library to the test executable
 target_link_libraries(ValidatorTests PRIVATE Validator)
