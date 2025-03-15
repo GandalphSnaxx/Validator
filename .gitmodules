@@ -1,3 +1,4 @@
 [submodule "Libraries/FlagField"]
 	path = Libraries/FlagField
 	url = git@github.com:GandalphSnaxx/FlagField-Manager.git
+	branch = main
